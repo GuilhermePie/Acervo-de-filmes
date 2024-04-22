@@ -1,0 +1,33 @@
+.footer{
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-buttons{
+    gap: 10px;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    list-style: none;
+}
+
+.item{
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-bottom: 1px solid white;
+    color: white;
+    border: none;
+    background-color: var(--color-darkBlue);
+}
+
+.item:hover{
+    background-color: black;
+}
+
+ul{
+    padding-left: 0;
+}

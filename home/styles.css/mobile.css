@@ -1,0 +1,116 @@
+@media only screen and (min-width: 280px) and (max-width: 760px){
+    .logo{
+        width: 120px;
+        height: 26px;
+    }
+
+    .box-logo{
+        gap:0px;
+    }
+
+    .lupa{
+        width: 26px;
+    }
+
+    .container-pesquisa{
+        padding: 10px 25px 10px 10px;
+    }
+
+    #pesquisar{
+        padding: 4px 40px 6px 15px;
+        right: -20px;
+        font-size: 13px;
+        margin-right: -16px;
+    }
+
+    /* welcome box */
+
+    .welcome-box{
+        justify-content: center;
+        background-position: top;
+        background-size: 140%;
+        height: 170px;
+    }
+
+    .welcome-text{
+        font-size: 28px;
+    }
+
+    .sub-welcome-text{
+        font-size: 16px;
+    }
+
+    /* filmes */
+
+    .cards{
+        padding-top: 10%;
+        padding-bottom: 8%;
+        grid-template-columns: repeat(auto-fit, 150px);
+        gap:0px;
+        justify-content: space-evenly;
+    }
+
+    .card{
+        width: 155px;
+    }
+
+    .poster{
+        height: 200px;
+    }
+
+    .porcent-vote{
+        width: 38px;
+        height: 38px;
+    }
+
+    /* loads */
+
+    #pre-load{
+        justify-content: space-evenly;
+        grid-template-columns: repeat(auto-fit, 150px);
+        gap: 0px;
+        padding-top: 5%;
+        margin-bottom: 40px;
+    }
+    
+    .load{
+        margin-bottom: 20px;
+        height: 250px;
+        width: 155px;
+    }
+
+    /* error */
+
+    .error{
+    align-items: center;
+    height: 67.5vh;
+    justify-content: center;
+    }
+
+    @keyframes show {
+        0% {  
+            width: 0px;
+            background-color: var(--color-darkBlue);
+        }
+        100% {
+            background-color: white;
+            width: 150px;
+        }
+    }
+
+    @keyframes hide {
+        0% {  
+            width: 150px;
+            background-color: white;
+        }
+
+        50%{
+            padding-right: 10px;
+        }
+
+        100% {
+            background-color: var(--color-darkBlue);
+            width: 0px;
+        }
+    }
+} 

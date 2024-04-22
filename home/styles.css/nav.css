@@ -1,0 +1,143 @@
+.logo{
+    width: 160px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.box-logo{
+    align-items: center;
+    gap: 20px;
+    display: flex;
+}
+
+.welcome-box{
+    padding-left: 40px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
+    background-image: url(../../images/beef.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.welcome-text{
+    font-size: 46px;
+}
+
+.bg-color{
+    background-color: var(--color-darkBlue);
+}
+
+.lupa{
+    z-index: 1;
+    width: 32px;
+    cursor: pointer;
+}
+
+.container-pesquisar{
+    width: 100%;
+    padding: 10px 30px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-pesquisar{
+    display: flex;
+    align-items: center;
+}
+
+@keyframes hide {
+    0% {
+        background-color: white;
+        width: 250px;
+    }
+    100% {
+        background-color: var(--color-darkBlue);
+        width: 0px;
+    }
+}
+
+.hideAnimation{
+    animation: hide 0.5s both;
+}
+
+@keyframes show {
+    0% {  
+        width: 0px;
+        display: block;
+    }
+    100% {
+        background-color: white;
+        width: 250px;
+    }
+}
+
+.showAnimation{
+    animation: show 0.5s both;
+}
+
+#pesquisar{
+    background-color: var(--color-darkBlue);
+    position: relative;
+    right: -50px;
+    padding:3px 35px 4px 15px;
+    margin-right: 15px;
+    border-radius: 15px;
+    border: none;
+}
+
+#gender-list{
+    color: black;
+    top: 42px;
+    right: -105px;
+    z-index: 10;
+    position: absolute;
+    width: 170px;
+    padding: 8px 20px 10px 30px;
+    border-radius: 10px;
+    flex-direction: column;
+    background-color: white;
+    align-items: start;
+    list-style: none;
+    overflow: auto;
+    scrollbar-width:none;
+    height: 400px;
+}
+
+.show{
+    display: flex;
+}
+
+.hide{
+    display: none;
+}
+
+.genero{
+    cursor: pointer;
+    padding: 10px 0px;
+}
+
+.genero:hover{
+    color: blue;
+    border-bottom: 1px solid var(--color-darkBlue);
+}
+
+.gen-btn{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px 0px 10px 0px;
+    color: white;
+    border: none;
+    background-color: var(--color-darkBlue);
+}
+
+.generos{
+    position: relative;
+    cursor: pointer;
+    color: white;
+    margin: 0px;    
+    padding-top: 2px;
+}

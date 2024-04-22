@@ -1,0 +1,98 @@
+@media only screen and (min-width: 280px) and (max-width: 760px){
+    .load-box{
+        height: 780px;
+        align-items: center;
+        flex-direction: column;
+        padding: 30px 15px 15px 15px;
+    }
+
+    .load-movie{
+        height: 815px;
+    }
+
+    .load-img{
+        max-width: 200px;
+        width: 50%;
+        height: 300px;
+    }
+
+    .load-sub-box{
+        padding: 10px;
+        align-items: center;
+        height: 100%;
+        justify-content: space-evenly;
+    }
+
+    .load-text{
+        align-items: center;
+    }
+
+    .load-ul{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .load-h2{
+        width: 70%;
+        height: 30px;
+        
+    }
+
+    .load-li-1{
+        width: 40%;
+    }
+    
+    .load-li-2{
+        width: 70%;
+    }
+    
+    .load-li-3{
+        width: 30%;
+    }
+
+    .load-tagline{
+        margin-top: 10px;
+    }
+
+    .load-homepage{
+        width: 35%;
+        height: 50px;
+    }
+
+    /* load cast e infos extras */
+
+    .load-info {
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .load-info-h2{
+        width: 35%;
+        margin: 20px;
+    }
+
+    .load-info-box{
+        width: 100%;
+        padding: 30px 10px 10px 10px;
+    }
+
+    .load-info-cast{
+        height: 259px;
+        margin: 25px 15px 0px 15px;
+    }
+
+    .load-info-cast-box{
+        min-width: 120px;
+        height: 210px;
+    }
+
+    .load-info-cast-box:first-child{
+        margin-left: 4px;
+    }
+
+    .load-info-extra{
+        width: 50%;
+        margin-bottom: 40px;
+    }
+
+}

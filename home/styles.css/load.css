@@ -1,0 +1,21 @@
+#pre-load{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 230px 230px 230px 230px;
+    grid-template-columns: repeat(auto-fit, 260px);
+    justify-content: center;
+    gap: 30px;
+    padding-top: 5%;
+    margin-bottom: 40px;
+}
+
+.load{
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    height: 386px;
+    width: 230px;
+}
+
+.box-all-loads{
+    width: 80%;
+}

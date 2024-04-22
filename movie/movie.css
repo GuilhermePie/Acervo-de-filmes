@@ -1,0 +1,256 @@
+*{
+    font-family: Helvetica, sans-serif;    
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(3,37,65);
+    background: linear-gradient(180deg, rgba(3,37,65,1) 3%, rgba(0,0,0,1) 65%);
+}
+
+#box{
+    padding: 60px;
+    color: white;
+    display: flex;
+    width: 100%;
+    height: 90vh;
+}
+
+#sub-box{
+    padding: 10px 30px 10px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#poster-filme{
+    border-radius: 20px;
+    width: 24%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#infos-filme{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-infos{
+    padding-left: 18px;
+    display: flex;
+    gap: 28px;
+}
+
+.tagline{
+    font-size: 18px;
+    opacity: 0.7;
+}
+
+.desc-filme{
+    width: 100%;
+    height: 120px;
+    overflow: auto;
+    font-size: 16px;
+}
+
+.nome-filme{
+    font-weight: 700;
+}
+
+.release-date{
+    opacity: 0.8;
+}
+
+#box-infos-extra{
+    display: flex;
+    background-color: white;
+    height: 500px;
+    width: 100%;
+}
+
+#infos-extra{
+    box-shadow: -85px -20px 20px -28px rgba(255,255,255,1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: black;
+    padding: 30px 0px 0px 30px;
+    width: 20%;
+}
+
+.p-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage-btn{
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    background-color: white;
+    width: 120px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.logo{
+    width: 160px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.container-pesquisar{
+    background-color:  rgb(3, 37, 65);
+    padding: 15px 0px 15px 10px;
+}
+
+.porcent-vote{
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgb(19, 19, 19);
+}
+
+.num-votes{
+    font-size: 1.5rem;
+    margin-left: 4px;
+    line-height: 1;
+    color: white;
+}
+
+.num-votes::after{
+    font-size: 11px;
+    content: "%"
+}
+
+.classificacao{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.red{
+    border: 4px solid red;
+}
+
+.yellow{
+    border: 4px solid yellow;
+}
+
+.green{
+    border: 4px solid green;
+}
+
+.geral{
+    margin-top: 5px;
+}
+
+#cast{
+    padding: 30px 30px 0px 30px;
+    width: 77%;
+}
+
+#cast-list{
+    margin-top: 20px;
+    height: 300px;
+    display: flex;
+    padding: 0px;
+    list-style: none;
+    overflow: auto;
+}
+
+#cast-list:last-child{
+    padding-right: 30px;
+}
+
+.cast-box{
+    margin-left: 20px;
+    border-radius: 10px;
+    height: 260px;
+    box-shadow: 0px 2px 8px 0px rgba(140,140,140,1);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.cast-img{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 180px;
+    width: 158px;
+}
+
+.cast-infos{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cast-title{
+    padding: 20px;
+    font-size: 20px;
+}
+
+.actor{
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+.character{
+    margin-bottom: 0px;
+    font-size: 14px;
+    overflow: hidden;
+    height: 40px;
+}
+
+/* scroll bar */
+
+*::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #DFE9EB;
+  }
+  
+  *::-webkit-scrollbar-track:hover {
+    background-color: #B8C0C2;
+  }
+  
+  *::-webkit-scrollbar-track:active {
+    background-color: #B8C0C2;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #888888;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #888888;
+  }
+  
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #757575;
+  }
+
+  footer{
+    display: flex;
+    justify-content: center;    
+    align-items:center ;
+    color: white;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(3,37,65,1);
+  }

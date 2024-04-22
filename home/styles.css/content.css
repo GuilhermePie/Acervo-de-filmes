@@ -1,0 +1,96 @@
+*{
+    --color-darkBlue: rgb(3, 37, 65);
+ }
+
+.cards{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 230px 230px 230px 230px;
+    grid-template-columns: repeat(auto-fit, 260px);
+    justify-content: center;
+    gap: 20px;
+    padding-top: 5%;
+}
+
+.card{
+    cursor: pointer;
+    display: flex;
+    width: 230px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    transition: 0.3s;
+
+}
+
+.card:hover{
+    opacity: 1;
+}
+
+.card:hover, .num-votes{
+    color: rgb(24, 156, 156);
+} 
+
+.poster{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 320px;
+}
+
+.bottom-poster{
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.porcent-vote{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -22px;
+    left: 15px;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--color-darkBlue);
+}
+
+.pos-title{
+    font-weight: bold;
+    margin: 0px;
+}
+
+.num-votes{
+    margin-top: -2px;
+    line-height: 1;
+    color: white;
+}
+
+
+.num-votes::after{
+    font-size: 9px;
+    content: "%"
+}
+
+.error{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 30vh;
+    margin-top: -70px;
+    width: 400px;
+}
+
+.red{
+    border: 3px solid red;
+}
+
+.yellow{
+    border: 3px solid yellow;
+}
+
+.green{
+    border: 3px solid green;
+}
+
