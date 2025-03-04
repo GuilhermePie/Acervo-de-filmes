@@ -1,21 +1,22 @@
 *{
-    --color-darkBlue: rgb(3, 37, 65);
+    --color-darkBlue: #081c22;
  }
 
 .cards{
     display: grid;
     justify-items: center;
     grid-template-columns: 230px 230px 230px 230px;
-    grid-template-columns: repeat(auto-fit, 260px);
+    grid-template-columns: repeat(auto-fit, 180px);
     justify-content: center;
     gap: 20px;
     padding-top: 5%;
 }
 
 .card{
+    border: none;
     cursor: pointer;
     display: flex;
-    width: 230px;
+    width: 180px;
     margin-bottom: 20px;
     opacity: 0.9;
     transition: 0.3s;
@@ -31,9 +32,8 @@
 } 
 
 .poster{
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 320px;
+    border-radius: 10px;
+    height: 265px;
 }
 
 .bottom-poster{
@@ -62,15 +62,19 @@
 }
 
 .num-votes{
-    margin-top: -2px;
-    line-height: 1;
+    font-weight: bold;
+    margin-left: 1px;
+    margin-bottom: 2px;
+    display: flex;
     color: white;
+    align-items: center;
 }
 
 
 .num-votes::after{
-    font-size: 9px;
-    content: "%"
+    font-size: 7px;
+    content: "%";
+    margin-bottom: 5px;
 }
 
 .error{
