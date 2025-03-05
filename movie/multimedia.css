@@ -1,0 +1,17 @@
+.options-multimedia{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.no-margin-bottom{
+    margin-bottom: 0;
+}
+
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}

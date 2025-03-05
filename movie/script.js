@@ -4,6 +4,10 @@ const infosExtra = document.getElementById('infos-extra')
 const castList = document.getElementById('cast-list')
 const load = document.getElementById('pre-load')
 const boxInfosExtra = document.getElementById('box-infos-extra')
+const videoYoutube = document.getElementById('video-youtube')
+const imagensFilme = document.getElementById('imagens-filme')
+const btnVideos = document.getElementById('btn-videos')
+const btnImages = document.getElementById('btn-images')
 
 const options = {
     method: 'GET',
@@ -16,7 +20,8 @@ const options = {
   fetch(`https://api.themoviedb.org/3/movie/${idFilme}?language=pt-BR`, options)
     .then(response => response.json())
     .then(response => {
-        createBanner(response) 
+        createBanner(response)
+        criandoMidias()
         console.log(response)})
     .catch(err => console.error(err));
 
@@ -130,3 +135,42 @@ infosExtra.innerHTML = `
             <p class="p-box"><strong>Bilheteria</strong>$${infos.revenue}</p>
 `
 }
+
+// ===========================
+async function criandoMidias(){
+    await fetch(`https://api.themoviedb.org/3/movie/${idFilme}/videos`, options)
+    .then(res => res.json())
+    .then(res => {
+            videoYoutube.innerHTML = `
+            <iframe width="500" height="300" src="https://www.youtube.com/embed/${res.results[0].key}" frameborder="0" allowfullscreen></iframe>
+        `
+    })
+    .catch(err => console.error(err));
+
+    await fetch(`https://api.themoviedb.org/3/movie/${idFilme}/images`, options)
+    .then(res => res.json())
+    .then(res => {
+        console.log(res)
+        imagensFilme.innerHTML = `
+            <img src="https://image.tmdb.org/t/p/w500/${res.posters[0].file_path}">
+            <img src="https://image.tmdb.org/t/p/w500/${res.posters[10].file_path}">
+        `
+    })
+    .catch(err => console.error(err));
+}
+//----------------------------
+btnImages.addEventListener('click',()=>{
+    imagensFilme.classList.remove('hide')
+    videoYoutube.classList.remove('show')
+
+    imagensFilme.classList.add('show')
+    videoYoutube.classList.add('hide')
+})
+
+btnVideos.addEventListener('click',()=>{
+    imagensFilme.classList.remove('show')
+    videoYoutube.classList.remove('hide')
+
+    imagensFilme.classList.add('hide')
+    videoYoutube.classList.add('show')
+})
