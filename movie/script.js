@@ -45,7 +45,7 @@ const createBanner = (infos)=>{
     const converter = (minutos) => {
         const horas = Math.floor(minutos/ 60);          
         const min = minutos % 60;
-        const textoHoras = (`0${horas}h`);
+        const textoHoras = (`${horas}h`);
         const textoMinutos = (`0${min}`).slice(-2);
         
         return `${textoHoras }${textoMinutos}`;
@@ -73,7 +73,7 @@ const createBanner = (infos)=>{
       
     const releaseDate = infos.release_date.substring(0,4)
     function reverseString(str) {
-        return str.split('-').reverse().join('/');
+        return str.split('-').reverse().join('-');
     }
 
     const pictureCheck = (str)=>{
@@ -108,9 +108,9 @@ const createBanner = (infos)=>{
             <section id="infos-filme">
                 <h2 class="nome-filme">${infos.title} <span class="release-date">(${releaseDate})</span></h2>
                 <ul class="sub-infos">
-                    <li>Data: ${reverseString(infos.release_date)}</li>
-                    <li>Gêneros: ${generesArr}</li>
-                    <li>Duração: ${converter(infos.runtime)}</li>
+                    <li>${reverseString(infos.release_date)}</li>
+                    <li>${generesArr}</li>
+                    <li>${converter(infos.runtime)}</li>
                 </ul>
                 <h3 class="tagline">${infos.tagline}</h3>
                 <div class='classificacao'>
@@ -123,7 +123,6 @@ const createBanner = (infos)=>{
                 <p class="desc-filme">${infos.overview} </p>
             
             </section>
-            <a class="homepage-btn" target="_blank" href="${infos.homepage}" >Home page</a>
         </div>
     </div>`
 
