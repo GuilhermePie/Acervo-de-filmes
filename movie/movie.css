@@ -40,6 +40,7 @@
 }
 
 .sub-infos{
+    font-size: 14px;
     padding-left: 18px;
     display: flex;
     gap: 28px;
@@ -68,7 +69,7 @@
 #box-infos-extra{
     display: flex;
     background-color: white;
-    height: 500px;
+    height: 400px;
     width: 100%;
 }
 
@@ -76,7 +77,7 @@
     box-shadow: -85px -20px 20px -28px rgba(255,255,255,1);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
     color: black;
     padding: 30px 0px 0px 30px;
     width: 20%;
@@ -110,18 +111,17 @@
 }
 
 .porcent-vote{
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     background-color: rgb(19, 19, 19);
 }
 
 .num-votes{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-left: 4px;
     line-height: 1;
     color: white;
@@ -133,6 +133,7 @@
 }
 
 .classificacao{
+    margin-bottom: 15px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -152,7 +153,9 @@
 }
 
 .geral{
-    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    margin: 0;
 }
 
 #cast{
@@ -162,7 +165,7 @@
 
 #cast-list{
     margin-top: 20px;
-    height: 300px;
+    height: 290px;
     display: flex;
     padding: 0px;
     list-style: none;
@@ -177,17 +180,16 @@
     margin-left: 20px;
     border-radius: 10px;
     height: 260px;
-    box-shadow: 0px 2px 8px 0px rgba(140,140,140,1);
+    box-shadow: 0px 2px 4px 0px rgb(197, 197, 197);
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
 }
 
 .cast-img{
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 180px;
-    width: 158px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    height: 175px;
+    width: 138px;
 }
 
 .cast-infos{
@@ -216,33 +218,17 @@
 /* scroll bar */
 
 *::-webkit-scrollbar {
-    height: 10px;
+    height: 8px;
     width: 10px;
   }
   *::-webkit-scrollbar-track {
     border-radius: 5px;
-    background-color: #DFE9EB;
-  }
-  
-  *::-webkit-scrollbar-track:hover {
-    background-color: #B8C0C2;
-  }
-  
-  *::-webkit-scrollbar-track:active {
-    background-color: #B8C0C2;
+    background-color: #f8f8f8;
   }
   
   *::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background-color: #888888;
-  }
-  
-  *::-webkit-scrollbar-thumb:hover {
-    background-color: #888888;
-  }
-  
-  *::-webkit-scrollbar-thumb:active {
-    background-color: #757575;
+    background-color: #e2e2e2;
   }
 
   footer{
@@ -254,3 +240,4 @@
     height: 60px;
     background-color: rgba(3,37,65,1);
   }
+

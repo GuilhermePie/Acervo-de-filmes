@@ -4,6 +4,10 @@ const infosExtra = document.getElementById('infos-extra')
 const castList = document.getElementById('cast-list')
 const load = document.getElementById('pre-load')
 const boxInfosExtra = document.getElementById('box-infos-extra')
+const videoYoutube = document.getElementById('video-youtube')
+const imagensFilme = document.getElementById('imagens-filme')
+const btnVideos = document.getElementById('btn-videos')
+const btnImages = document.getElementById('btn-images')
 
 const options = {
     method: 'GET',
@@ -16,7 +20,8 @@ const options = {
   fetch(`https://api.themoviedb.org/3/movie/${idFilme}?language=pt-BR`, options)
     .then(response => response.json())
     .then(response => {
-        createBanner(response) 
+        createBanner(response)
+        criandoMidias()
         console.log(response)})
     .catch(err => console.error(err));
 
@@ -40,7 +45,7 @@ const createBanner = (infos)=>{
     const converter = (minutos) => {
         const horas = Math.floor(minutos/ 60);          
         const min = minutos % 60;
-        const textoHoras = (`0${horas}h`);
+        const textoHoras = (`${horas}h`);
         const textoMinutos = (`0${min}`).slice(-2);
         
         return `${textoHoras }${textoMinutos}`;
@@ -68,7 +73,7 @@ const createBanner = (infos)=>{
       
     const releaseDate = infos.release_date.substring(0,4)
     function reverseString(str) {
-        return str.split('-').reverse().join('/');
+        return str.split('-').reverse().join('-');
     }
 
     const pictureCheck = (str)=>{
@@ -103,9 +108,9 @@ const createBanner = (infos)=>{
             <section id="infos-filme">
                 <h2 class="nome-filme">${infos.title} <span class="release-date">(${releaseDate})</span></h2>
                 <ul class="sub-infos">
-                    <li>Data: ${reverseString(infos.release_date)}</li>
-                    <li>Gêneros: ${generesArr}</li>
-                    <li>Duração: ${converter(infos.runtime)}</li>
+                    <li>${reverseString(infos.release_date)}</li>
+                    <li>${generesArr}</li>
+                    <li>${converter(infos.runtime)}</li>
                 </ul>
                 <h3 class="tagline">${infos.tagline}</h3>
                 <div class='classificacao'>
@@ -118,7 +123,6 @@ const createBanner = (infos)=>{
                 <p class="desc-filme">${infos.overview} </p>
             
             </section>
-            <a class="homepage-btn" target="_blank" href="${infos.homepage}" >Home page</a>
         </div>
     </div>`
 
@@ -130,3 +134,50 @@ infosExtra.innerHTML = `
             <p class="p-box"><strong>Bilheteria</strong>$${infos.revenue}</p>
 `
 }
+
+// ===========================
+async function criandoMidias(){
+    await fetch(`https://api.themoviedb.org/3/movie/${idFilme}/videos`, options)
+    .then(res => res.json())
+    .then(res => {
+            videoYoutube.innerHTML = `
+            <iframe width="100%" height="300" class="youtube-size" src="https://www.youtube.com/embed/${res.results[0].key}" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="300" class="youtube-size" src="https://www.youtube.com/embed/${res.results[1].key}" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="300" class="youtube-size" src="https://www.youtube.com/embed/${res.results[2].key}" frameborder="0" allowfullscreen></iframe>
+        `
+    })
+    .catch(err => console.error(err));
+
+    await fetch(`https://api.themoviedb.org/3/movie/${idFilme}/images`, options)
+    .then(res => res.json())
+    .then(res => {
+        console.log(res)
+        imagensFilme.innerHTML = `
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[0].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[1].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[2].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[3].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[4].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[5].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[6].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[7].file_path}">
+        `
+    })
+    .catch(err => console.error(err));
+}
+//----------------------------
+btnImages.addEventListener('click',()=>{
+    imagensFilme.classList.remove('hide')
+    videoYoutube.classList.remove('show')
+
+    imagensFilme.classList.add('show')
+    videoYoutube.classList.add('hide')
+})
+
+btnVideos.addEventListener('click',()=>{
+    imagensFilme.classList.remove('show')
+    videoYoutube.classList.remove('hide')
+
+    imagensFilme.classList.add('hide')
+    videoYoutube.classList.add('show')
+})
