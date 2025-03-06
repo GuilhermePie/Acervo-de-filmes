@@ -1,17 +1,48 @@
 .options-multimedia{
+    padding-bottom: 20px;
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
 }
 
-.no-margin-bottom{
+.btn-multimedia{
+    cursor: pointer;
     margin-bottom: 0;
 }
 
+.multimedia-title{
+    font-size: 20px;
+}
+
 .show{
-    display: block;
+    display: flex;
 }
 
 .hide{
     display: none;
 }
+
+#multimedia{
+    padding: 30px 30px 0px 50px;
+}
+
+#video-youtube{
+    padding-bottom: 10px;
+    width: 75%;
+    gap: 10px;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+#imagens-filme{
+    padding-bottom: 10px;
+    width: 75%;
+    gap: 10px;
+    overflow: auto;
+    margin-bottom: 20px;
+}
+
+.youtube-size{
+    min-width:450px;
+}
+

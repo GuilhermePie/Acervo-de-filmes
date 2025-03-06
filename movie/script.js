@@ -141,7 +141,9 @@ async function criandoMidias(){
     .then(res => res.json())
     .then(res => {
             videoYoutube.innerHTML = `
-            <iframe width="500" height="300" src="https://www.youtube.com/embed/${res.results[0].key}" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="300" class="youtube-size" src="https://www.youtube.com/embed/${res.results[0].key}" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="300" class="youtube-size" src="https://www.youtube.com/embed/${res.results[1].key}" frameborder="0" allowfullscreen></iframe>
+            <iframe width="100%" height="300" class="youtube-size" src="https://www.youtube.com/embed/${res.results[2].key}" frameborder="0" allowfullscreen></iframe>
         `
     })
     .catch(err => console.error(err));
@@ -151,8 +153,14 @@ async function criandoMidias(){
     .then(res => {
         console.log(res)
         imagensFilme.innerHTML = `
-            <img src="https://image.tmdb.org/t/p/w500/${res.posters[0].file_path}">
-            <img src="https://image.tmdb.org/t/p/w500/${res.posters[10].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[0].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[1].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[2].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[3].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[4].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[5].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[6].file_path}">
+            <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[7].file_path}">
         `
     })
     .catch(err => console.error(err));
