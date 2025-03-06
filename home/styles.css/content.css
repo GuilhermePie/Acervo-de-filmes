@@ -1,12 +1,13 @@
 *{
     --color-darkBlue: #081c22;
+    --color-blueLight: #0d253f;
  }
 
 .cards{
     display: grid;
     justify-items: center;
     grid-template-columns: 230px 230px 230px 230px;
-    grid-template-columns: repeat(auto-fit, 180px);
+    grid-template-columns: repeat(auto-fit, 150px);
     justify-content: center;
     gap: 30px;
     padding-top: 5%;
@@ -16,7 +17,7 @@
     border: none;
     cursor: pointer;
     display: flex;
-    width: 180px;
+    width: 150px;
     margin-bottom: 20px;
     opacity: 0.9;
     transition: 0.3s;
@@ -33,7 +34,7 @@
 
 .poster{
     border-radius: 10px;
-    height: 265px;
+    height: 235px;
 }
 
 .bottom-poster{

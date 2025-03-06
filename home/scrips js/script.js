@@ -1,6 +1,7 @@
 const tela = document.getElementById('box')
 const footer = document.getElementById('footer')
 const boxGen = document.getElementById('gender-list')
+const boxOrder = document.getElementById('order-list')
 const boxAllGeneres = document.getElementById('box-all-generes')
 const pesquisar = document.getElementById('pesquisar')
 const textGender = document.getElementById('text-gender')

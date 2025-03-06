@@ -22,17 +22,21 @@
                 <a href="" class="navbar-brand"><img class="logo"
                         src="../images/textFilmes__create_a_logo_for_a_site_of_movi-removebg-preview.png" alt="">
                 </a>
+                <div id="ordenar" onmouseover="showOrdem()" onmouseleave="hideOrdem()">
+                    <input type="button" value="Filmes" class="gen-btn" id="filmes-btn">
+                    <ul id="order-list" class="hide">
+                        <li class="genero" onclick='moviesOrder("popularity.desc")'>Populares</li>
+                        <li class="genero" onclick='moviesOrder("revenue.desc")'>Maiores bilheterias</li>
+                        <li class="genero" onclick='moviesOrder("primary_release_date.desc")'>Futuros Lançamentos</li>
+                    </ul>
+                </div>
                 <div class="generos" id="text-gender" onmouseover="showGenders()" onmouseleave="hideGenders()">
-                    <input type="button" value="Gênero" class="gen-btn">
+                    <input type="button" value="Gêneros" class="gen-btn">
                     <ul id="gender-list" class="hide">
                     </ul>
                 </div>
             </div>
-            <div class="box-pesquisar">
-                <input onchange="pesquisarFilme()" type="text" id="pesquisar" placeholder="Nome do filme"
-                    class="hideAnimation">
-                <img onclick="showHide()" class="lupa" src="../images/lupa.png">
-            </div>
+
         </div>
     </nav>
 
@@ -40,6 +44,11 @@
     <div class="welcome-box">
         <h1 class="welcome-text"><strong>Bem-vindo(a).</strong></h1>
         <h2 class="sub-welcome-text"><strong>Milhões de filme para descobrir. Explore já!</strong></h2>
+        <div class="box-pesquisar">
+            <input onchange="pesquisarFilme()" type="text" id="pesquisar" placeholder="Nome do filme"
+                class="hideAnimation">
+            <img onclick="showHide()" class="lupa" src="../images/lupa.png">
+        </div>
     </div>
     <div id="pre-load">
         <div class="load"></div>

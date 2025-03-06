@@ -9,6 +9,16 @@ const hideGenders = ()=>{
     boxGen.classList.add('hide')
 }
 
+const showOrdem = ()=>{
+    boxOrder.classList.remove('hide')
+    boxOrder.classList.add('show')
+}
+
+const hideOrdem = ()=>{
+    boxOrder.classList.remove('show')
+    boxOrder.classList.add('hide')
+}
+
 //show pesquisar
 
 const showHide = ()=>{
@@ -46,8 +56,16 @@ const moviesGener = (genId)=>{
         inserirFilme(API_URL + '&with_genres=' + genId + '&page=1')
         boxGen.classList.remove('show')
         boxGen.classList.add('hide')
-
 }
+
+// pesquisando por filmes mais votados ou outros
+
+const moviesOrder = (orderId)=>{
+    inserirFilme(BASE_URL + '/discover/movie?sort_by='+ orderId + '&' + API_KEY + '&page=1')
+    boxOrder.classList.remove('show')
+    boxOrder.classList.add('hide')
+}
+
 
 // tranformando numeros em "porcentagens"
 

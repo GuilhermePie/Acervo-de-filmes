@@ -5,10 +5,16 @@
     }
 
     .box-logo{
-        gap:0px;
+        gap:15px;
+    }
+
+    #gender-list{
+        right: -80px;
     }
 
     .lupa{
+        right: 20px;
+        top: 14px;
         width: 26px;
     }
 
@@ -17,15 +23,31 @@
     }
 
     #pesquisar{
-        padding: 4px 40px 6px 15px;
-        right: -20px;
-        font-size: 13px;
-        margin-right: -16px;
+        position: relative;
+        padding:5px 150px 5px 10px;
+        margin-top: 10px;
+        width: 100%;
+        border-radius: 15px;
+        border: none;
+    }
+
+    .box-pesquisar{
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    #order-list{
+        color: black;
+        top: 52px;
+        left: 130px;
     }
 
     /* welcome box */
 
     .welcome-box{
+        padding-left: 20px;
         justify-content: center;
         background-position: top;
         background-size: 140%;
