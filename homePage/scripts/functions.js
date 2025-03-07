@@ -133,7 +133,7 @@ const verify = (val)=>{
     movies.forEach((mov)=>{
         if(mov.id === val){
             localStorage.setItem('idFilme', mov.id)
-            window.location.href = '../movie/movie.html'
+            window.location.href = '../moviePage/movie.html'
     }
 })    
 }
