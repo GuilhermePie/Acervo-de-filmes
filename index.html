@@ -21,9 +21,11 @@
                 <div id="ordenar" onmouseover="showOrdem()" onmouseleave="hideOrdem()">
                     <input type="button" value="Filmes" class="gen-btn" id="filmes-btn">
                     <ul id="order-list" class="hide">
-                        <li class="genero" onclick='moviesOrder("popularity.desc")'>Populares</li>
-                        <li class="genero" onclick='moviesOrder("revenue.desc")'>Maiores bilheterias</li>
-                        <li class="genero" onclick='moviesOrder("primary_release_date.desc")'>Futuros Lançamentos</li>
+                        <li class="genero" onclick='moviesOrder("popularity.desc" , "Populares")'>Populares</li>
+                        <li class="genero" onclick='moviesOrder("revenue.desc" , "Maiores bilheterias")'>Maiores
+                            bilheterias</li>
+                        <li class="genero" onclick='moviesOrder("primary_release_date.desc" , "Futuros Lançamentos")'>
+                            Futuros Lançamentos</li>
                     </ul>
                 </div>
                 <div class="generos" id="text-gender" onmouseover="showGenders()" onmouseleave="hideGenders()">
@@ -41,7 +43,7 @@
         <h1 class="welcome-text"><strong>Bem-vindo(a).</strong></h1>
         <h2 class="sub-welcome-text"><strong>Milhões de filme para descobrir. Explore já!</strong></h2>
         <div class="box-pesquisar">
-            <input onchange="pesquisarFilme()" type="text" id="pesquisar" placeholder="Nome do filme"
+            <input onchange="pesquisarFilme()" type="text" id="pesquisar" placeholder="Pesquisar nome do filme"
                 class="hideAnimation">
             <img onclick="showHide()" class="lupa" src="./assets/lupa.png">
         </div>
@@ -67,6 +69,13 @@
         <div class="load"></div>
         <div class="load"></div>
         <div class="load"></div>
+    </div>
+
+    <div class="box-titulo-pesquisa">
+        <h3 id="titulo-pesquisa">Tendências</h3>
+        <div class="hoje-bg">
+            <p id="sub-titulo" class="hoje">Hoje</p>
+        </div>
 
     </div>
 

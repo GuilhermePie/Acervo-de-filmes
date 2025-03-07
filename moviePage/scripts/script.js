@@ -101,6 +101,7 @@ const createBanner = (infos)=>{
     .catch(err => console.error(err));
 
     document.title = `${infos.title} ${releaseDate}`
+    
     container.innerHTML = 
     `<div id="box">
         <img id="poster-filme" src="https://image.tmdb.org/t/p/w500/${infos.poster_path}">
