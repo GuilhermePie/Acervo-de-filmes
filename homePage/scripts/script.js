@@ -1,10 +1,13 @@
 const tela = document.getElementById('box')
 const footer = document.getElementById('footer')
 const boxGen = document.getElementById('gender-list')
+const boxOrder = document.getElementById('order-list')
 const boxAllGeneres = document.getElementById('box-all-generes')
 const pesquisar = document.getElementById('pesquisar')
 const textGender = document.getElementById('text-gender')
 const pre = document.getElementById('pre-load')
+const tituloPesquisa = document.getElementById('titulo-pesquisa')
+const subTitulo = document.getElementById('sub-titulo')
 
 const popular = 'https://api.themoviedb.org/3/movie/popular?api_key=3c2a00ea5e7f911a8ef56cc6c1ade227&page=1';
 const API_KEY = "&api_key=3c2a00ea5e7f911a8ef56cc6c1ade227"

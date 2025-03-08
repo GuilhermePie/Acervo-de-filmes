@@ -43,6 +43,12 @@
 }
 
 .youtube-size{
+    border-radius: 10px !important;
     min-width:450px;
+    transition-property: transform;
+    transition-duration: 0.3s;
 }
 
+.youtube-size:hover{
+    transform: scale(1.02);
+}

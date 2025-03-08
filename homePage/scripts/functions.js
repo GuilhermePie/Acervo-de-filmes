@@ -9,6 +9,16 @@ const hideGenders = ()=>{
     boxGen.classList.add('hide')
 }
 
+const showOrdem = ()=>{
+    boxOrder.classList.remove('hide')
+    boxOrder.classList.add('show')
+}
+
+const hideOrdem = ()=>{
+    boxOrder.classList.remove('show')
+    boxOrder.classList.add('hide')
+}
+
 //show pesquisar
 
 const showHide = ()=>{
@@ -21,7 +31,8 @@ const pesquisarFilme = ()=>{
 
     if(pesquisar.value !== ''){
         const search = `${BASE_URL}${query}${pesquisar.value}${API_KEY}&page=1`
-        inserirFilme(search)
+        inserirFilme(search , pesquisar.value , "Resultado")
+
         pesquisar.value=''
     }else{
         tela.innerHTML = `<h1 class="error">Filme não encontrado</h1>`
@@ -35,19 +46,27 @@ const pesquisarFilme = ()=>{
 const generos = fetch(searchList).then(response => response.json())
 .then(data => {
     data.genres.forEach((gen)=>{
-        boxGen.innerHTML += `<li id="${gen.id}" onclick='moviesGener(${gen.id})' class="genero">${gen.name}</li>`
+        boxGen.innerHTML += `<li id="${gen.id}" onclick='moviesGener(${gen.id}, "${gen.name}")' class="genero">${gen.name}</li>`
     })
 })
 .catch(error => {
     tela.innerHTML = `<h1 class="error">Filme não encontrado</h1>`
 })
 
-const moviesGener = (genId)=>{
-        inserirFilme(API_URL + '&with_genres=' + genId + '&page=1')
+const moviesGener = (genId , genName)=>{
+        inserirFilme(API_URL + '&with_genres=' + genId + '&page=1' , genName , "Populares")
         boxGen.classList.remove('show')
         boxGen.classList.add('hide')
-
 }
+
+// pesquisando por filmes mais votados ou outros
+
+const moviesOrder = (orderId , orderValue)=>{
+    inserirFilme(BASE_URL + '/discover/movie?sort_by='+ orderId + '&' + API_KEY + '&page=1' , orderValue , "Atualmente")
+    boxOrder.classList.remove('show')
+    boxOrder.classList.add('hide')
+}
+
 
 // tranformando numeros em "porcentagens"
 
@@ -75,7 +94,7 @@ const bordercolor = (porcent)=>{
 
 // função que insere os filmes 
 
-const inserirFilme = (url)=>{
+const inserirFilme = (url, titulo , subTitle)=>{
     pre.style.display = 'grid'
     tela.style.display='none'
     setTimeout(()=>{
@@ -95,11 +114,13 @@ const inserirFilme = (url)=>{
                             <span class="num-votes">${voteAverage(pos.vote_average)}</span>
                         </div>
                         <p class="pos-title">${pos.title}</p>
+                        <p>${pos.release_date}</p>
                     </div>
                 </div>`})
             console.log(data)
             movies = data.results
-            
+            tituloPesquisa.innerHTML = titulo
+            subTitulo.innerHTML = subTitle
         })
         .catch(error => {
             tela.innerHTML = `<h1 class="error">Filme não encontrado</h1>`
@@ -107,7 +128,7 @@ const inserirFilme = (url)=>{
         return url
 }
 
-inserirFilme(popular)
+inserirFilme(popular , "Tendências" , "Hoje")
 
 // verificar se o filme clicado e qual filme foi clicado
 
@@ -115,7 +136,7 @@ const verify = (val)=>{
     movies.forEach((mov)=>{
         if(mov.id === val){
             localStorage.setItem('idFilme', mov.id)
-            window.location.href = '../movie/movie.html'
+            window.location.href = '../moviePage/movie.html'
     }
 })    
 }
