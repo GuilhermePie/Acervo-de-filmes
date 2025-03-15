@@ -5,6 +5,30 @@
     --color-blueLight: #0d253f;
  }
 
+ .hide{
+    display: none;
+ }
+
+ #tendecies{
+    display: flex;
+    overflow: auto;
+    gap: 15px;
+ }
+
+ .cardInicial{
+    cursor: pointer;
+ }
+
+ .cardInicial:first-child{
+    padding-left: 50px;
+ }
+
+ .cardInicial:last-child{
+    padding-right: 50px;
+ }
+
+
+
 .cards{
     display: grid;
     justify-items: center;
@@ -19,7 +43,6 @@
     cursor: pointer;
     display: flex;
     width: 150px;
-    margin-bottom: 20px;
 }
 
 .poster{
@@ -78,7 +101,7 @@
     width: 400px;
 }
 
-#titulo-pesquisa{
+.titulo-pesquisa{
     margin-bottom: 0;
     font-weight: 600;
     font-size: 24px;

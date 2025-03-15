@@ -65,7 +65,11 @@
 
     /* filmes */
 
-    #titulo-pesquisa {
+    .cardInicial:first-child {
+        padding-left: 20px;
+    }
+
+    .titulo-pesquisa {
         font-size: 18px !important;
     }
 

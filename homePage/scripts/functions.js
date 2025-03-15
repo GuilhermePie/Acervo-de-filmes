@@ -1,3 +1,11 @@
+const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYzJhMDBlYTVlN2Y5MTFhOGVmNTZjYzZjMWFkZTIyNyIsIm5iZiI6MTcxMDQ1NDQ5OC4xNiwic3ViIjoiNjVmMzc2ZTJhMzEzYjgwMTg1MjVhY2Y0Iiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.Lsjdeb0ERjOM6appCahcJyb5tQCNiXHKIIgf5C7GEGs'
+    }
+  };
+
 // ----------------------------------------
 const showGenders = ()=>{
     boxGen.classList.remove('hide')
@@ -54,7 +62,7 @@ const generos = fetch(searchList).then(response => response.json())
 })
 
 const moviesGener = (genId , genName)=>{
-        inserirFilme(API_URL + '&with_genres=' + genId + '&page=1' , genName , "Populares")
+        inserirFilme(API_URL + '&with_genres=' + genId + '&page=1' , genName , "Populares" , "Populares" , "Hoje")
         boxGen.classList.remove('show')
         boxGen.classList.add('hide')
 }
@@ -128,7 +136,34 @@ const inserirFilme = (url, titulo , subTitle)=>{
         return url
 }
 
-inserirFilme(popular , "Tendências" , "Hoje")
+inserirFilme(popular , "Os mais populares" , "Hoje")
+
+//inserir filmes tendencias
+
+const inserirTendencia = (url, op)=>{
+        fetch(url , op)
+        .then(response => response.json())
+        .then(data => {
+            data.results.length <= 0 ? tendencies.innerHTML = `<h1 class="error">Filme não encontrado</h1>` : data.results.map((pos)=>{tendencies.innerHTML += 
+                `<div class="cardInicial" onclick="verify(${pos.id})">
+                    <img src="https://image.tmdb.org/t/p/w500/${pos.poster_path}" alt="poster do filme" class="poster">
+                    <div class="bottom-poster">
+                        <div class="porcent-vote ${bordercolor(voteAverage(pos.vote_average))}">
+                            <span class="num-votes">${voteAverage(pos.vote_average)}</span>
+                        </div>
+                        <p class="pos-title">${pos.title}</p>
+                    </div>
+                </div>`})
+                data.results.forEach((newMovie)=>{
+                    movies.push(newMovie)
+                })
+        })
+        .catch(error => {
+            // tendencies.innerHTML = `<h1 class="error">Filme não encontrado</h1>`
+        })
+}
+
+inserirTendencia('https://api.themoviedb.org/3/trending/movie/day?language=en-US', options)
 
 // verificar se o filme clicado e qual filme foi clicado
 
@@ -146,5 +181,6 @@ const verify = (val)=>{
 const page = (num)=>{
     location.href = ("#nav")
     const urlAnterior = currentUrl.slice(0, currentUrl.length - 1)
-    inserirFilme(`${urlAnterior}${num}`)
+    inserirFilme(`${urlAnterior}${num}` , "Página" , `${num}`)
+    allTendencies.classList.add('hide')
 }

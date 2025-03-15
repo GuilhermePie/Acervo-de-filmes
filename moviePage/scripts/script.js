@@ -8,6 +8,7 @@ const videoYoutube = document.getElementById('video-youtube')
 const imagensFilme = document.getElementById('imagens-filme')
 const btnVideos = document.getElementById('btn-videos')
 const btnImages = document.getElementById('btn-images')
+const multimediaSection = document.getElementById('multimedia')
 
 const options = {
     method: 'GET',
@@ -22,7 +23,7 @@ const options = {
     .then(response => {
         createBanner(response)
         criandoMidias()
-        console.log(response)})
+    })
     .catch(err => console.error(err));
 
 const createBanner = (infos)=>{
@@ -78,7 +79,7 @@ const createBanner = (infos)=>{
 
     const pictureCheck = (str)=>{
         if(str === null){
-            return '../images/pessoas.png'
+            return '../../assets/pessoas.png'
         }
 
         return `https://media.themoviedb.org/t/p/w138_and_h175_face${str}`
@@ -87,7 +88,6 @@ const createBanner = (infos)=>{
     const cast = fetch(`https://api.themoviedb.org/3/movie/${infos.id}/credits?language=en-US`, options)
     .then(response => response.json())
     .then(data => {
-        console.log(data)
         data.cast.forEach((cast)=>{
            castList.innerHTML += `<li class="cast-box">
                     <img class="cast-img" src="${pictureCheck(cast.profile_path)}">
@@ -122,7 +122,9 @@ const createBanner = (infos)=>{
                 </div>
                 <h4>Sinopse</h4>
                 <p class="desc-filme">${infos.overview} </p>
-            
+                <div id="director">
+                 
+                </div>
             </section>
         </div>
     </div>`
@@ -152,7 +154,6 @@ async function criandoMidias(){
     await fetch(`https://api.themoviedb.org/3/movie/${idFilme}/images`, options)
     .then(res => res.json())
     .then(res => {
-        console.log(res)
         imagensFilme.innerHTML = `
             <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[0].file_path}">
             <img class="poster-size" src="https://image.tmdb.org/t/p/w200/${res.posters[1].file_path}">
