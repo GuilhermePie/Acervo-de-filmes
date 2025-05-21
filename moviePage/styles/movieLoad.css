@@ -120,12 +120,6 @@
     background-color: var(--load-color);
 }
 
-.load-homepage{
-    width: 20%;
-    border-radius: 10px;
-    height: 40px;
-    background-color: var(--load-color);
-}
 /* load info */
 
 .load-info{

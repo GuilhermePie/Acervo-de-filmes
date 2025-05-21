@@ -1,0 +1,31 @@
+@media only screen and (min-width: 280px) and (max-width: 760px){
+    #multimedia{
+        padding: 30px 30px 0px 30px;
+    }
+    
+    #video-youtube{
+        padding-bottom: 10px;
+        width: 100%;
+        gap: 10px;
+        overflow: auto;
+        margin-bottom: 20px;
+    }
+    
+    #imagens-filme{
+        padding-bottom: 10px;
+        width: 100%;
+        gap: 10px;
+        overflow: auto;
+        margin-bottom: 20px;
+    }
+    
+    .youtube-size{
+        min-width:300px;
+        height: 200px;
+    }
+
+    .poster-size{
+        height: 200px;
+        width: 150px;
+    }
+}
