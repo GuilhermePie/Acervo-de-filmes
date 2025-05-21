@@ -28,7 +28,8 @@
 
 #poster-filme{
     border-radius: 20px;
-    width: 24%;
+    height: 450px;
+    width: 300px;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -165,7 +166,7 @@
 
 #cast-list{
     margin-top: 20px;
-    height: 290px;
+    height: 306px;
     display: flex;
     padding: 0px;
     list-style: none;
